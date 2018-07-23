@@ -61,5 +61,7 @@ class InteractiveRecord
       SELECT * FROM #{self.table_name}
       WHERE #{row.keys.first} = #{new_value}
       SQL
+      DB[:conn].execute(sql)
+    end
 
 end
