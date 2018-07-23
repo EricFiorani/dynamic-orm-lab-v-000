@@ -57,5 +57,9 @@ class InteractiveRecord
   def self.find_by(row)
     value = row.values.first
     new_value = value.class == Fixnum ? value : "'#{value}'"
+    sql = <<-SQL
+      SELECT * FROM #{self.table_name}
+      WHERE #{row.keys.first} = #{new_value}
+      SQL
 
 end
