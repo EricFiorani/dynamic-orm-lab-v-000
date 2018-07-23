@@ -62,6 +62,6 @@ class InteractiveRecord
       WHERE #{row.keys.first} = #{new_value}
       SQL
       DB[:conn].execute(sql)
-    end
+  end
 
 end
